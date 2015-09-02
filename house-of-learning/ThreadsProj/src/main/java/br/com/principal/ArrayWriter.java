@@ -8,6 +8,7 @@ public class ArrayWriter implements Runnable {
 	public ArrayWriter(int value, SimpleArray array) {
 		sharedSimpleArray = array;
 		startValue = value;
+		System.out.println("malhacaoooooooooo!!!!!!");
 	}
 
 	@Override
