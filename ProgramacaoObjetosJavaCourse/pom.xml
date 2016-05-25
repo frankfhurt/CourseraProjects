@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.coursera</groupId>
+	<artifactId>ProgramacaoObjetosJavaCourse</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Curso de Programacao Orientada a Objetos Java</name>
+	<description>Curso de Programacao Orientada a Objetos Java Coursera</description>
+	<modules>
+		<module>Pizzaria</module>
+
+		<module>CadeiaConstrutores</module>
+		
+		
+		<module>Carros</module>
+		<module>TarefaDiferentesProdutos</module>
+		<module>BrunoProdutos</module>
+		<module>PilhaEncapsulada</module>
+		<module>Concurso</module>
+		<module>TarefaFormatarNome</module>
+		<module>Interfaces</module>
+		<module>Login</module>
+	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

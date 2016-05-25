@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" automaticImage="JPEG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="BancoDePalavras" project="C1-S6-JogoDasPalavrasEmbaralhadas" 
+    file="/C1-S6-JogoDasPalavrasEmbaralhadas/src/BancoDePalavras.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="215" y="316"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="2" language="java" name="Embaralhador" project="C1-S6-JogoDasPalavrasEmbaralhadas" 
+    file="/C1-S6-JogoDasPalavrasEmbaralhadas/src/Embaralhador.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="542" y="639"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="3" language="java" name="FabricaEmbaralhadores" project="C1-S6-JogoDasPalavrasEmbaralhadas" 
+    file="/C1-S6-JogoDasPalavrasEmbaralhadas/src/FabricaEmbaralhadores.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="621" y="354"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="EmbaralhadorMisturar" project="C1-S6-JogoDasPalavrasEmbaralhadas" 
+    file="/C1-S6-JogoDasPalavrasEmbaralhadas/src/EmbaralhadorMisturar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="406" y="472"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="5" language="java" name="MecanicaDoJogo" project="C1-S6-JogoDasPalavrasEmbaralhadas" 
+    file="/C1-S6-JogoDasPalavrasEmbaralhadas/src/MecanicaDoJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="988" y="-4"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="6" language="java" name="MecanicaDoJogoPadrao" project="C1-S6-JogoDasPalavrasEmbaralhadas" 
+    file="/C1-S6-JogoDasPalavrasEmbaralhadas/src/MecanicaDoJogoPadrao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="209" y="31"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="Principal" project="C1-S6-JogoDasPalavrasEmbaralhadas" 
+    file="/C1-S6-JogoDasPalavrasEmbaralhadas/src/Principal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="985" y="-284"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="FabricaMecanicaDoJogo" project="C1-S6-JogoDasPalavrasEmbaralhadas" 
+    file="/C1-S6-JogoDasPalavrasEmbaralhadas/src/FabricaMecanicaDoJogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="627" y="-280"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="EmbaralhadorInverter" project="C1-S6-JogoDasPalavrasEmbaralhadas" 
+    file="/C1-S6-JogoDasPalavrasEmbaralhadas/src/EmbaralhadorInverter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="673" y="472"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="MecanicaDoJogoTreino" project="C1-S6-JogoDasPalavrasEmbaralhadas" 
+    file="/C1-S6-JogoDasPalavrasEmbaralhadas/src/MecanicaDoJogoTreino.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="627" y="38"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="11">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="12">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="13">    
+    <bendpoint x="817" y="331"/>    
+    <bendpoint x="816" y="376"/>    
+    <bendpoint x="810" y="528"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <realization id="14">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <realization id="15">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <dependency id="16">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <association id="17">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="18" name="banco"/>      
+      <multiplicity id="19" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="20">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <realization id="21">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="22">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="23" name="banco"/>      
+      <multiplicity id="24" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="25">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <dependency id="26">    
+    <bendpoint x="40" y="248"/>    
+    <bendpoint x="40" y="494"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="27">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="28">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="29">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="30" name="fabricaEmbraralhador">        
+        <position height="18" width="127" x="566" y="249"/>      
+      </attribute>      
+      <multiplicity id="31" minimum="0" maximum="1">        
+        <position height="16" width="25" x="696" y="249"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="32">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <association id="33">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="34" name="fabricaEmbraralhador">        
+        <position height="18" width="127" x="393" y="237"/>      
+      </attribute>      
+      <multiplicity id="35" minimum="0" maximum="1">        
+        <position height="16" width="25" x="525" y="240"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="36">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
