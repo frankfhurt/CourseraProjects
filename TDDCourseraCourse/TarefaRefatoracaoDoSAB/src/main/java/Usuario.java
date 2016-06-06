@@ -2,6 +2,10 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Usuario implements Comparable<Object> {
+
+	private String _nome;
+	private LinkedList<Livro> _livros;
+	
 	public Usuario(String nome) {
 		setNome(nome);
 		_livros = new LinkedList<Livro>();
@@ -69,7 +73,4 @@ public class Usuario implements Comparable<Object> {
 	protected LinkedList<Livro> getLivros() {
 		return _livros;
 	}
-
-	private String _nome;
-	private LinkedList<Livro> _livros;
 }

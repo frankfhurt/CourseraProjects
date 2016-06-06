@@ -66,7 +66,7 @@ public class BibliotecaTestContextoInicial {
 		assertEquals(tam + 2, biblioteca.sizeUsuarios());
 
 		// T9: Cria terceiro usuário novo
-		biblioteca.registraUsuario("Joaquim");
+		biblioteca.registraUsuario("Josivan");
 		assertEquals(tam + 3, biblioteca.sizeUsuarios());
 	}
 
