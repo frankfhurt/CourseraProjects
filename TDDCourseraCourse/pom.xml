@@ -12,6 +12,8 @@
 
   	<module>Tradutor</module>
   	<module>TarefaRefatoracaoDoSAB</module>
+  	
+  	<module>CarrinhoCompras</module>
   </modules>
   	<build>
 		<plugins>
