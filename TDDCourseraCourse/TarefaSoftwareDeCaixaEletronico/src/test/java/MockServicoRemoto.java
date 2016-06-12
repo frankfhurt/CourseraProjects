@@ -10,10 +10,8 @@ public class MockServicoRemoto implements ServicoRemoto {
 	}
 
 	private void populaContasCorrente() {
-		contasCorrente.put("1", 100);
+		contasCorrente.put("1", 1000);
 		contasCorrente.put("2", 50);
-		contasCorrente.put("3", 1000);
-		contasCorrente.put("4", 0);
 	}
 
 	@Override

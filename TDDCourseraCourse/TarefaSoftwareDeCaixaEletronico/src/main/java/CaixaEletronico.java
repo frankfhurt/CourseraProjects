@@ -24,16 +24,39 @@ public class CaixaEletronico {
 		}
 	}
 	
-	public String sacar() {
-		return null;
+	public String sacar(Integer valorSaque) throws Exception {
+		if (contaCorrente == null)
+			throw new UsuarioNaoLogadoException("Usuário não logado!");
+		else {
+			if (valorSaque <= contaCorrente.getSaldo()){
+				hardware.entregarDinheiro();
+				contaCorrente.setSaldo(contaCorrente.getSaldo() - valorSaque);
+				return "Retire seu dinheiro";
+			} else {
+				return "Saldo insuficiente";
+			}
+		}
 	}
 	
-	public String depositar() {
-		return null;
+	public String depositar(Integer valorDeposito) throws Exception {
+		if (contaCorrente == null) {
+			throw new UsuarioNaoLogadoException("Usuário não logado!");
+		} else {
+			if (valorDeposito < 1)
+				throw new DepositoComValorNegativoException("Não é permitido valor negativo para depósito");
+			
+			hardware.lerEnvelope();
+			contaCorrente.setSaldo(contaCorrente.getSaldo() + valorDeposito);
+			return "Depósito recebido com sucesso";
+		}
 	}
 	
-	public String saldo() {
-		return null;
+	public String saldo() throws UsuarioNaoLogadoException {
+		if (contaCorrente == null) {
+			throw new UsuarioNaoLogadoException("Usuário não logado!");
+		} else {
+			return "O saldo é R$" + contaCorrente.getSaldo() + ",00";
+		}
 	}
 	
 }
