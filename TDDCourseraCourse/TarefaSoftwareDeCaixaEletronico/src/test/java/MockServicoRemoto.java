@@ -24,7 +24,6 @@ public class MockServicoRemoto implements ServicoRemoto {
 
 	@Override
 	public void persistirConta(ContaCorrente conta) {
-
 		if (contasCorrente.containsKey(conta.getNroConta()))
 			contasCorrente.replace(conta.getNroConta(), conta.getSaldo());
 	}

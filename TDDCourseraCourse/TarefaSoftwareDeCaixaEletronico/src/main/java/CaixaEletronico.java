@@ -31,6 +31,7 @@ public class CaixaEletronico {
 			if (valorSaque <= contaCorrente.getSaldo()){
 				hardware.entregarDinheiro();
 				contaCorrente.setSaldo(contaCorrente.getSaldo() - valorSaque);
+				servicoRemoto.persistirConta(contaCorrente);
 				return "Retire seu dinheiro";
 			} else {
 				return "Saldo insuficiente";
@@ -47,6 +48,7 @@ public class CaixaEletronico {
 			
 			hardware.lerEnvelope();
 			contaCorrente.setSaldo(contaCorrente.getSaldo() + valorDeposito);
+			servicoRemoto.persistirConta(contaCorrente);
 			return "Depósito recebido com sucesso";
 		}
 	}

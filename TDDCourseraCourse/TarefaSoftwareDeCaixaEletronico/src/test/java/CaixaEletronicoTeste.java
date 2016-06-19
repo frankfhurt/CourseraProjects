@@ -118,4 +118,25 @@ public class CaixaEletronicoTeste {
 		assertEquals("Usuário Autenticado", caixaComPau.logar("1"));
 		caixaComPau.depositar(100);
 	}
+
+	@Test
+	public void verificaSeContaFoiPersistidaComSucessoAposSaque() throws Exception {
+		assertEquals("Usuário Autenticado", caixa.logar("1"));
+		assertEquals("Retire seu dinheiro", caixa.sacar(50));
+		assertEquals("O saldo é R$950,00", caixa.saldo());
+		
+		assertEquals("Usuário Autenticado", caixa.logar("1"));
+		assertEquals("O saldo é R$950,00", caixa.saldo());
+	}
+
+	@Test
+	public void verificaSeContaFoiPersistidaComSucessoAposDeposito() throws Exception {
+		assertEquals("Usuário Autenticado", caixa.logar("1"));
+		assertEquals("Depósito recebido com sucesso", caixa.depositar(50));
+		assertEquals("O saldo é R$1050,00", caixa.saldo());
+		
+		assertEquals("Usuário Autenticado", caixa.logar("1"));
+		assertEquals("O saldo é R$1050,00", caixa.saldo());
+	}
+	
 }
