@@ -12,9 +12,11 @@ import java.util.List;
 public class Armazenamento {
 
 	private UsuariosComPontuacao usuariosComPontuacao;
+	private String nomeArquivo;
 	
-	public Armazenamento() {
+	public Armazenamento(String nomeArquivo) {
 		super();
+		this.nomeArquivo = nomeArquivo;
 		try {
 			lerArquivo();
 		} catch (Exception e) {
@@ -24,7 +26,6 @@ public class Armazenamento {
 	}
 
 	public String registraPontuacao(String nomeUsuario, String tipoPontuacao, int pontuacao) {
-
 		UsuarioComPontuacao usuario = new UsuarioComPontuacao(nomeUsuario, tipoPontuacao, pontuacao);
 
 		try {
@@ -41,19 +42,23 @@ public class Armazenamento {
 		return usuariosComPontuacao.getPontuacaoPorNomeUsuarioETipoPontuacao(nomeUsuario, tipoPontuacao);
 	}
 
-	public List<String> getUsuariosComPontuacao() {
-		
-		List<String> nomeUsuarios = new ArrayList<>();
-		
-		for (UsuarioComPontuacao usuario : usuariosComPontuacao.getUsuariosComPontuacao()) {
-			nomeUsuarios.add(usuario.getNomeUsuario());
-		}
-		
-		return nomeUsuarios;
+	public UsuariosComPontuacao getUsuariosComPontuacao() {
+		return usuariosComPontuacao;
 	}
 	
-	private void escreverNoArquivo(UsuarioComPontuacao usuario) throws IOException {
-		File arquivo = new File("./UsuariosComPontuacao.txt");
+	public List<String> getTiposDePontosPorUsuario(String nomeUsuario) {
+		List<String> tiposDePontos = new ArrayList<>();
+		
+		for (UsuarioComPontuacao usuario : usuariosComPontuacao.getUsuariosComPontuacao()) {
+			if(nomeUsuario.equals(usuario.getNomeUsuario()))
+				tiposDePontos.add(usuario.getTipoPontuacao());
+		}
+		
+		return tiposDePontos;
+	}
+	
+	protected void escreverNoArquivo(UsuarioComPontuacao usuario) throws IOException {
+		File arquivo = new File("./" + nomeArquivo);
 		FileWriter writer = new FileWriter(arquivo, true);
 		PrintWriter printWriter = new PrintWriter(writer);
 		
@@ -62,20 +67,25 @@ public class Armazenamento {
 		printWriter.close();
 	}
 	
-	private void lerArquivo() throws NumberFormatException, IOException {
-		String aux = "";
+	protected void lerArquivo() throws IOException {
+		File arquivo = new File("./" + nomeArquivo);
 		usuariosComPontuacao = new UsuariosComPontuacao();
-		BufferedReader reader = new BufferedReader(new FileReader("./UsuariosComPontuacao.txt"));
 		
-		while ((aux = reader.readLine()) != null) {
-			String string[] = aux.split(";");
-			String nome = string[0];
-			String tipoPontuacao = string[1];
-			String pontuacao = string[2];
+		if (arquivo.exists()) {
+			String aux;
+			BufferedReader reader = new BufferedReader(new FileReader("./" + nomeArquivo));
 			
-			usuariosComPontuacao.adicionaUsuarioComPontuacao(new UsuarioComPontuacao(nome, tipoPontuacao, Integer.parseInt(pontuacao)));
+			while ((aux = reader.readLine()) != null) {
+				String[] string = aux.split(";");
+				String nome = string[0];
+				String tipoPontuacao = string[1];
+				String pontuacao = string[2];
+				
+				usuariosComPontuacao.adicionaUsuarioComPontuacao(new UsuarioComPontuacao(nome, tipoPontuacao, Integer.parseInt(pontuacao)));
+			}
+			reader.close();
+		} else {
+			arquivo.createNewFile();
 		}
-		reader.close();
 	}
-
 }

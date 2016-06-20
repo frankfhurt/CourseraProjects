@@ -10,24 +10,31 @@ import org.junit.Before;
 import org.junit.Test;
 
 import gamificacao.Armazenamento;
+import gamificacao.UsuarioComPontuacao;
+import gamificacao.UsuariosComPontuacao;
 
 public class ArmazenamentoTest {
 
 	private Armazenamento armazenamento;
+	private String nomeArquivo = "arquivoDeTeste.txt";
 	
 	@Before
-	public void preparaAmbienteDeTeste() throws Exception {
-		armazenamento = new Armazenamento();
-		File f = new File("./UsuariosComPontuacao.txt");
-		f.delete();
-		f.createNewFile();
+	public void setUp() throws Exception {
+		armazenamento = new Armazenamento(nomeArquivo);
+		File f = new File("./" + nomeArquivo);
+		if (f.exists()){
+			f.delete();
+			f.createNewFile();
+		} else {
+			f.createNewFile();
+		}
+		
 	}
 	
 	@After
-	public void zeraArquivoDeUsuarios() throws IOException {
-		File f = new File("./UsuariosComPontuacao.txt");
+	public void finalizar() throws IOException {
+		File f = new File("./" + nomeArquivo);
 		f.delete();
-		f.createNewFile();
 	}
 
 	@Test
@@ -73,8 +80,8 @@ public class ArmazenamentoTest {
 		
 		String nomes = "";
 		
-		for (String nome : armazenamento.getUsuariosComPontuacao()) {
-			nomes += nome + ", ";
+		for (UsuarioComPontuacao usuario : armazenamento.getUsuariosComPontuacao().getUsuariosComPontuacao()) {
+			nomes += usuario.getNomeUsuario() + ", ";
 		}
 		
 		assertEquals("guerra, clovis, fernandes, ", nomes);
@@ -90,15 +97,75 @@ public class ArmazenamentoTest {
 		
 		String nomes = "";
 		
-		for (String nome : armazenamento.getUsuariosComPontuacao()) {
-			nomes += nome + ", ";
+		for (UsuarioComPontuacao usuario : armazenamento.getUsuariosComPontuacao().getUsuariosComPontuacao()) {
+			nomes += usuario.getNomeUsuario() + ", ";
 		}
 		
 		assertEquals("guerra, clovis, fernandes, eduardo, joao, ", nomes);
 	}
 	
 	@Test
-	public void teste() {
-	}
+	public void verificaTipoDePontoPorUsuario() {
+		String tiposDePontos = "";
 
+		armazenamento.registraPontuacao("guerra", "estrela", 10);
+		
+		for (String tipo : armazenamento.getTiposDePontosPorUsuario("guerra")) {
+			tiposDePontos += tipo + ", ";
+		}
+		assertEquals("estrela, ", tiposDePontos);
+	}
+	
+	@Test
+	public void registrarDoisTiposDePontoParaOMesmoUsuario() {
+		String tiposDePontos = "";
+
+		armazenamento.registraPontuacao("guerra", "estrela", 10);
+		armazenamento.registraPontuacao("guerra", "moeda", 20);
+		
+		for (String tipo : armazenamento.getTiposDePontosPorUsuario("guerra")) {
+			tiposDePontos += tipo + ", ";
+		}
+		assertEquals("estrela, moeda, ", tiposDePontos);
+	}
+	
+	@Test
+	public void registrarVariosTiposDePontoParaDoisUsuarios() {
+		String tiposDePontosGuerra = "";
+		String tiposDePontosClovis = "";
+
+		armazenamento.registraPontuacao("guerra", "estrela", 10);
+		armazenamento.registraPontuacao("guerra", "moeda", 20);
+
+		armazenamento.registraPontuacao("clovis", "energia", 10);
+		armazenamento.registraPontuacao("clovis", "curtida", 5);
+		
+		for (String tipo : armazenamento.getTiposDePontosPorUsuario("guerra")) {
+			tiposDePontosGuerra += tipo + ", ";
+		}
+		
+		for (String tipo : armazenamento.getTiposDePontosPorUsuario("clovis")) {
+			tiposDePontosClovis += tipo + ", ";
+		}
+		
+		assertEquals("estrela, moeda, ", tiposDePontosGuerra);
+		assertEquals("energia, curtida, ", tiposDePontosClovis);
+	}
+	
+	@Test
+	public void arquivoEstaComOsValoresCorretosCadastradosAnteriormente() {
+		armazenamento.registraPontuacao("guerra", "estrela", 10);
+		armazenamento.registraPontuacao("guerra", "moeda", 20);
+		armazenamento.registraPontuacao("clovis", "energia", 10);
+		armazenamento.registraPontuacao("clovis", "curtida", 5);
+		
+		UsuariosComPontuacao usuariosCadastrados = armazenamento.getUsuariosComPontuacao();
+		
+		Armazenamento armazenamentoValidacao = new Armazenamento(nomeArquivo);
+		
+		UsuariosComPontuacao usuariosRecuperadosDoArquivo = armazenamentoValidacao.getUsuariosComPontuacao();
+		
+		assertEquals(usuariosCadastrados, usuariosRecuperadosDoArquivo);
+	}
+	
 }
