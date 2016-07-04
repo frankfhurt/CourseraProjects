@@ -1,7 +1,7 @@
 package caesarCipher;
 
 public class Main {
-
+ 
 	public static void main(String[] args) {
 
 		Encryptation enc1 = new Encryptation(16);

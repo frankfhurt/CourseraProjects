@@ -6,7 +6,7 @@ public class Encryptation {
 	private String alphabetLower = "abcdefghijklmnopqrstuvwxyz";
 	private String shifted;
 	private String shiftedLower;
-	
+
 	public Encryptation(int key) {
 		super();
 		this.shifted = alphabet.substring(key) + alphabet.substring(0, key);
