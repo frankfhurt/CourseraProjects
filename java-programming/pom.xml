@@ -9,6 +9,7 @@
 	<description>Java Programming Course Coursera</description>
 	<modules>
 		<module>FirstWeek</module>
+		<module>SecondWeek</module>
 	</modules>
 	<build>
 		<plugins>
