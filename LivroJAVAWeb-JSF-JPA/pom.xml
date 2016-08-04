@@ -22,5 +22,6 @@
 	</build>
 	<modules>
 		<module>JavaWeb_Inicio</module>
+		<module>JPA_Testes</module>
 	</modules>
 </project>
