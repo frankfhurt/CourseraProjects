@@ -35,9 +35,7 @@ public class UsuariosComPontuacao {
 	
 	public List<UsuarioComPontuacao> getListaOrdenadaDeUsuariosComPontuacao() {
 		List<UsuarioComPontuacao> usuarios = new ArrayList<>(this.usuariosComPontuacao);
-		
 		Comparator<UsuarioComPontuacao> comparator = (u1, u2) -> u1.getPontuacao() - u2.getPontuacao();
-		
 		usuarios.sort(comparator.reversed());
 		
 		return usuarios;
