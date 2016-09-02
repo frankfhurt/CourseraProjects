@@ -29,5 +29,6 @@
 	<modules>
 		<module>SomarParcelas</module>
 		<module>TesteFuncionalSomarParcelas</module>
+		<module>TiposGenericos</module>
 	</modules>
 </project>
