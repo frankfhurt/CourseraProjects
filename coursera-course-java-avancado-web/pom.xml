@@ -31,5 +31,6 @@
 		<module>TesteFuncionalSomarParcelas</module>
 		<module>TiposGenericos</module>
 		<module>ContadoresEscopo</module>
+		<module>OraculoMVC</module>
 	</modules>
 </project>
