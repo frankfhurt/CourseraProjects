@@ -30,5 +30,6 @@
 		<module>SomarParcelas</module>
 		<module>TesteFuncionalSomarParcelas</module>
 		<module>TiposGenericos</module>
+		<module>ContadoresEscopo</module>
 	</modules>
 </project>
