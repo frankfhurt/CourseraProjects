@@ -8,6 +8,6 @@
 	</head>
 	<body>
 		<h3>Tradução: ${traducao}</h3>
-		
+		<a href="http://localhost:8080/TradutorDePalavras/index.html">Voltar</a>
 	</body>
 </html>

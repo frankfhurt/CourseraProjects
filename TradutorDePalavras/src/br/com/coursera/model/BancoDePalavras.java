@@ -10,20 +10,18 @@ import java.util.stream.Stream;
 public class BancoDePalavras {
 
 	private List<PortuguesIngles> palavras = new ArrayList<>();
-	private final String fileName;
+	private final String path;
 
-	public BancoDePalavras(String fileName) throws IOException {
-		this.fileName = fileName;
+	public BancoDePalavras(String path) throws IOException {
+		this.path = path;
 		populaPalavras();
 	}
 
 	private void populaPalavras() throws IOException {
-		System.out.println(this.getClass().getClassLoader().getResource(fileName).getPath());
-		Stream<String> stream = Files.lines(Paths.get(this.getClass().getClassLoader().getResource(fileName).getPath()));
-
+		Stream<String> stream = Files.lines(Paths.get(path));
 		stream.forEach(line -> {
 			int pontoEVirgula = line.indexOf(";");
-			PortuguesIngles palavra = new PortuguesIngles(line.substring(0, pontoEVirgula - 1),
+			PortuguesIngles palavra = new PortuguesIngles(line.substring(0, pontoEVirgula),
 					line.substring(pontoEVirgula + 1));
 			palavras.add(palavra);
 		});
