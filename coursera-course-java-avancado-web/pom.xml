@@ -32,5 +32,6 @@
 		<module>TiposGenericos</module>
 		<module>ContadoresEscopo</module>
 		<module>OraculoMVC</module>
+		<module>AcessoBancoDeDados</module>
 	</modules>
 </project>
