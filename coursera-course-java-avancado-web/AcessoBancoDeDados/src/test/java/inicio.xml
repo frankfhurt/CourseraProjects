@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<USUARIO LOGIN="joao" NOME="Joao Pedro" EMAIL="joao@email.com.br" />
+	<USUARIO LOGIN="maria" NOME="Maria Tereza" EMAIL="mt@email.com.br" />
+</dataset>
