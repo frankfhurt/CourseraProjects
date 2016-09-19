@@ -16,7 +16,7 @@ public class TesteUsuarioDao {
 	
 	@Before
 	public void setUp() throws Exception {
-		jdt = new JdbcDatabaseTester("org.postgresql.Driver", "jdbc:postgresql://localhost:5432/usuarios", "postgres", "postgres");
+		jdt = new JdbcDatabaseTester("org.postgresql.Driver", "jdbc:postgresql://localhost:5432/usuarios", "postgres", "bematech@");
 		FlatXmlDataFileLoader loader = new FlatXmlDataFileLoader();
 		jdt.setDataSet(loader.load("/inicio.xml"));
 		jdt.onSetup();
@@ -45,7 +45,6 @@ public class TesteUsuarioDao {
 		ITable expectedTable = expectedDataset.getTable("USUARIO");
 		
 		Assertion.assertEquals(expectedTable, currentTable);
-		
 	}
 
 }
