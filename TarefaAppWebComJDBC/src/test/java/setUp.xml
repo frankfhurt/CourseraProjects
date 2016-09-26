@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<USUARIO LOGIN="fernando" NOME="Fernando Silva" EMAIL="fernando@email.com.br" SENHA="senhaDoFernando" PONTOS="15" />
+	<USUARIO LOGIN="flavia" NOME="Flavia Fulana" EMAIL="flavia@email.com.br" SENHA="senhaDaFlavia" PONTOS="5" />
+	<USUARIO LOGIN="liza" NOME="Liza Luiza" EMAIL="liza@email.com.br" SENHA="senhaDaLiza" PONTOS="7" />
+	<USUARIO LOGIN="pedro" NOME="Pedro Joao" EMAIL="pedro@email.com.br" SENHA="senhaDoPedro" PONTOS="10" />
+</dataset>

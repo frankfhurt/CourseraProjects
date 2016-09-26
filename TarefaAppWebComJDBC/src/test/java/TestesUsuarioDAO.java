@@ -10,6 +10,10 @@ import org.dbunit.util.fileloader.FlatXmlDataFileLoader;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.tarefa.model.Usuario;
+import br.com.tarefa.repositorio.UsuarioDAO;
+import br.com.tarefa.repositorio.UsuarioDAOImpl;
+
 public class TestesUsuarioDAO {
 
 	private JdbcDatabaseTester jdt;

@@ -34,5 +34,7 @@
 		<module>OraculoMVC</module>
 		<module>AcessoBancoDeDados</module>
 		<module>Comparador</module>
+		
+		<module>LoginWeb</module>
 	</modules>
 </project>
