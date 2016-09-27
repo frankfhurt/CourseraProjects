@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.tarefa.dao.CadastraUsuario;
 import br.com.tarefa.model.Usuario;
-import br.com.tarefa.repositorio.CadastraUsuario;
 
 /**
  * Servlet implementation class CadastroServlet

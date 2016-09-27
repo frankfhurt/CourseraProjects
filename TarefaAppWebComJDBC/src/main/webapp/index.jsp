@@ -15,7 +15,8 @@
 		</form>
 	</div>
 	<div align="center">
-		${erroLogin}
+		${erroLogin} <br>
+		<a href="cadastro">Criar Cadastro</a>
 	</div>
 </body>
 </html>
