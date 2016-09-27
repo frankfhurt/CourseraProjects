@@ -1,4 +1,4 @@
-package br.com.tarefa.repositorio;
+package br.com.tarefa.dao;
 
 import br.com.tarefa.exception.ErroAoInserirUsuarioException;
 import br.com.tarefa.model.Usuario;

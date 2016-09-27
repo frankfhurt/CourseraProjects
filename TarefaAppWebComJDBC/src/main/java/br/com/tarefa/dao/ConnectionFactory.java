@@ -1,4 +1,4 @@
-package br.com.tarefa.repositorio;
+package br.com.tarefa.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package br.com.tarefa.repositorio;
+package br.com.tarefa.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,6 +13,21 @@ import br.com.tarefa.model.Usuario;
 
 public class TopicoDAO {
 
+	public void inserir(Topico topico) {
+		try (Connection c = ConnectionFactory.getConnection()) {
+			
+			String sql = "INSERT INTO topico(titulo, conteudo, login) VALUES (?, ?, ?)";
+			PreparedStatement stm = c.prepareStatement(sql);
+			stm.setString(1, topico.getTitulo());
+			stm.setString(2, topico.getConteudo());
+			stm.setString(3, topico.getLogin());
+			
+			stm.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public List<Topico> recuperarTopicos() {
 		
 		List<Topico> topicos = new ArrayList<>();
@@ -65,5 +80,37 @@ public class TopicoDAO {
 			e.printStackTrace();
 		}
 		return topicos;
+	}
+	
+	public TopicoUsuario getTopicoUsuario(long id) {
+		
+		TopicoUsuario tp = null;
+		
+		try (Connection c = ConnectionFactory.getConnection()) {
+			String sql = "SELECT t.*, u.nome, u.email, u.pontos FROM topico t INNER JOIN usuario u ON t.login = u.login WHERE t.id_topico = ?";
+			PreparedStatement stm = c.prepareStatement(sql);
+			stm.setLong(1, id);
+			ResultSet rs = stm.executeQuery();
+			
+			if (rs.next()) {
+				Usuario usr = new Usuario();
+				Topico topico = new Topico();
+				
+				usr.setLogin(rs.getString("login"));
+				usr.setEmail(rs.getString("email"));
+				usr.setNome(rs.getString("nome"));
+				usr.setPontos(rs.getInt("pontos"));
+				
+				topico.setId(rs.getInt("id_topico"));
+				topico.setConteudo(rs.getString("conteudo"));
+				topico.setTitulo(rs.getString("titulo"));
+				topico.setLogin(rs.getString("login"));
+				
+				tp = new TopicoUsuario(topico, usr);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return tp;
 	}
 }
