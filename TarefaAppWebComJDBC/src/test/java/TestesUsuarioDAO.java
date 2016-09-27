@@ -17,7 +17,7 @@ import br.com.tarefa.model.Usuario;
 public class TestesUsuarioDAO {
 
 	private JdbcDatabaseTester jdt;
-	private static final String CON_URL = "jdbc:postgresql://localhost:5432/coursera";
+	private static final String CON_URL = "jdbc:postgresql://localhost:5432/TarefaSemana4";
 	private static final String USER = "postgres";
 	private static final String PASS = "postgres";
 	private static final UsuarioDAO usrDao = new UsuarioDAOImpl();
@@ -26,7 +26,7 @@ public class TestesUsuarioDAO {
 	public void setUp() throws Exception {
 		jdt = new JdbcDatabaseTester("org.postgresql.Driver", CON_URL, USER, PASS);
 		FlatXmlDataFileLoader loader = new FlatXmlDataFileLoader();
-		jdt.setDataSet(loader.load("/setUp.xml"));
+		jdt.setDataSet(loader.load("/setUpUsuarios.xml"));
 		jdt.onSetup();
 	}
 	
@@ -44,7 +44,7 @@ public class TestesUsuarioDAO {
 		IDataSet currentDataset = jdt.getConnection().createDataSet();
 		ITable currentTable = currentDataset.getTable("USUARIO");
 		FlatXmlDataFileLoader loader = new FlatXmlDataFileLoader();
-		IDataSet expectedDataset = loader.load("/insertValidacao.xml");
+		IDataSet expectedDataset = loader.load("/validacaoDeInsertUsuario.xml");
 		ITable expectedTable = expectedDataset.getTable("USUARIO");
 		
 		Assertion.assertEquals(expectedTable, currentTable);

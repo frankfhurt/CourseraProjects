@@ -56,10 +56,12 @@
 		</table>
 		<br>
 		<div>
+		<h4>Comentários</h4>
 			<table class="tg">
 				<c:forEach var="comentario" items="${comentarios}">
 					<tr align="right">
-						<th class="tg-yw4l" id="nomeUsuario">${comentario.comentario}</th>
+						<th class="tg-yw4l">${comentario.comentario.comentario}</th>
+						<th class="tg-yw4l">${comentario.usuario.nome}</th>
 					</tr>
 				</c:forEach>
 			</table>

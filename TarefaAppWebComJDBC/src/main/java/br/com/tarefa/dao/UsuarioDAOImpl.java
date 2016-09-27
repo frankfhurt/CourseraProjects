@@ -52,7 +52,6 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	}
 
 	public void adicionarPontos(String login, int pontos) {
-
 		try (Connection c = ConnectionFactory.getConnection()) {
 			String sql = "UPDATE usuario SET pontos = pontos + ? WHERE login = ?";
 			PreparedStatement stm = c.prepareStatement(sql);

@@ -16,7 +16,7 @@
 	</div>
 	<div align="center">
 		${erroLogin} <br>
-		<a href="cadastro">Criar Cadastro</a>
+		<a href="cadastro.jsp">Criar Cadastro</a>
 	</div>
 </body>
 </html>

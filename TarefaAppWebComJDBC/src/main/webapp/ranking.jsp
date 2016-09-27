@@ -3,8 +3,6 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <style type="text/css">
@@ -38,16 +36,16 @@
 	vertical-align: top
 }
 
-.btn-link{
-  border:none;
-  outline:none;
-  background:none;
-  cursor:pointer;
-  color:#0000EE;
-  padding:0;
-  text-decoration:underline;
-  font-family:inherit;
-  font-size:inherit;
+.btn-link {
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+	color: #0000EE;
+	padding: 0;
+	text-decoration: underline;
+	font-family: inherit;
+	font-size: inherit;
 }
 </style>
 <head>
@@ -55,24 +53,29 @@
 <title>Fórum - Tarefa Coursera Course</title>
 </head>
 <body>
-	<h1>Tópicos</h1>
+	<h1>Ranking do Fórum</h1>
 	<br>
 	<div>
 		<table class="tg">
-			<c:forEach var="topicoUsuario" items="${topicosUsuarios}">
+			<tr>
+				<th class="tg-031e" align="center">Colocação</th>
+				<th class="tg-031e" align="center">Nome do Usuário</th>
+				<th class="tg-031e" align="center">Login do Usuário</th>
+				<th class="tg-031e" align="center">Pontuação do Usuário</th>
+			</tr>
+			<c:forEach var="usuario" items="${usuarios}" varStatus="loop">
 				<tr>
-					<th class="tg-031e">
-						<a href="exibeTopico?id=${topicoUsuario.topico.id}">${topicoUsuario.topico.titulo}</a>
-					</th>
-					<th class="tg-yw4l" id="nomeUsuario">${topicoUsuario.usuario.nome}</th>
+					<th class="tg-031e">${loop.index +1}º</th>
+					<th class="tg-031e" align="left">${usuario.nome}</th>
+					<th class="tg-031e" align="left">${usuario.login}</th>
+					<th class="tg-031e" align="right">${usuario.pontos}</th>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
 	<br>
 	<div>
-		<a href="insereTopico.jsp">Inserir Tópico</a>
-		<a href="ranking">Ranking</a>
+		<a href="listaDeTopicos">Voltar</a>
 	</div>
 </body>
 </html>

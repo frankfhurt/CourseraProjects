@@ -30,8 +30,7 @@ public class LoginServlet extends HttpServlet {
 		UsuarioDAO usrDAO = new UsuarioDAOImpl();
 		Usuario usuarioAutenticado = usrDAO.recuperar(login);
 		
-		if (getServletContext().getAttribute("usuarioAutenticado") == null)
-			getServletContext().setAttribute("usuarioAutenticado", usuarioAutenticado);
+		getServletContext().setAttribute("usuarioAutenticado", usuarioAutenticado);
 	
 		Autenticador aut = new Autenticador();
 

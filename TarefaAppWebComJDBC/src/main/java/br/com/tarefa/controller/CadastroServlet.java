@@ -1,6 +1,8 @@
 package br.com.tarefa.controller;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,10 +23,10 @@ public class CadastroServlet extends HttpServlet {
 		
 		Usuario usr = new Usuario();
 		
-		usr.setNome(request.getParameter("nome"));
-		usr.setLogin(request.getParameter("login"));
-		usr.setEmail(request.getParameter("email"));
-		usr.setSenha(request.getParameter("senha"));
+		usr.setNome(new String(request.getParameter("nome").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
+		usr.setLogin(new String(request.getParameter("login").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
+		usr.setEmail(new String(request.getParameter("email").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
+		usr.setSenha(new String(request.getParameter("senha").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
 		
 		CadastraUsuario cadastro = new CadastraUsuario(usr);
 		boolean salvou = cadastro.cadatrarUsuario();
