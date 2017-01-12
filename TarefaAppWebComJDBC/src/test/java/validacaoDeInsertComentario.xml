@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<COMENTARIO ID_COMENTARIO="1" COMENTARIO="Comentário do Pedro no Tópico do Fenando" login="pedro" ID_TOPICO="1" />
+	<COMENTARIO ID_COMENTARIO="2" COMENTARIO="Comentário do Fenando no Tópico do Pedro" login="fernando" ID_TOPICO="2" />
+	<COMENTARIO ID_COMENTARIO="29" COMENTARIO="Teste de comentário do Fernando no Tópico do Pedro" login="fernando" ID_TOPICO="2" />
+</dataset>

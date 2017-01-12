@@ -20,7 +20,7 @@ public class TestesAutenticador {
 	public void setUp() throws Exception {
 		jdt = new JdbcDatabaseTester("org.postgresql.Driver", CON_URL, USER, PASS);
 		FlatXmlDataFileLoader loader = new FlatXmlDataFileLoader();
-		jdt.setDataSet(loader.load("/setUpUsuarios.xml"));
+		jdt.setDataSet(loader.load("/setUp.xml"));
 		jdt.onSetup();
 	}
 

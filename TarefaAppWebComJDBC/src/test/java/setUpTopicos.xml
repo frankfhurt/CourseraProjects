@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<dataset>
-	<TOPICO ID_TOPICO="1" TITULO="Tópico do Fenando" CONTEUDO="Conteúdo do tópico" LOGIN="fernando" />
-	<TOPICO ID_TOPICO="2" TITULO="Tópico do Pedro" CONTEUDO="Conteúdo do tópico do Pedro" LOGIN="pedro" />
-</dataset>
