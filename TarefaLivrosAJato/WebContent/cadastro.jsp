@@ -1,8 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <style>
@@ -69,7 +70,7 @@
 }
 
 .form .register-form {
-	display: none;
+	
 }
 
 .container {
@@ -126,20 +127,16 @@ body {
 <body>
 	<div class="login-page">
 		<div class="form">
-			<form class="register-form">
-				<input type="text" placeholder="name" /> <input type="password" placeholder="password" /> 
-				<input type="text" placeholder="email address" />
-				<button>create</button>
+			<form class="register-form" method="post" action="cadastrar">
+				<input type="text" placeholder="nome" name="nome"/>
+				<input type="password" placeholder="senha" name="senha" />
+				<input type="text" placeholder="email" name="email" />
+				<button>Cadastrar</button>
 				<p class="message">
-					Already registered? <a href="#">Sign In</a>
+					Já tem cadastro? <a href="/TarefaLivrosAJato/index.jsp">Efetuar Login</a>
 				</p>
-			</form>
-			<form class="login-form" action="<c:url value="/login"/>" method="POST">
-				<input type="text" placeholder="username" /> <input type="password"
-					placeholder="password" />
-				<button type="submit">login</button>
 				<p class="message">
-					Not registered? <a href="#">Create an account</a>
+					${erroCadastro}
 				</p>
 			</form>
 		</div>
