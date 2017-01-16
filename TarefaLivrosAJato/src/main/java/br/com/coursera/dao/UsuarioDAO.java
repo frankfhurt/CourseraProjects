@@ -42,19 +42,15 @@ public class UsuarioDAO {
 		}	
 	}
 	
-	public Usuario autenticar(String login, String senha) {
+	public Usuario autenticar(String email, String senha) {
 		EntityManager entityManager = JpaUtil.getEntityManager();
-		Usuario usuario;
-		
-		String consulta = "select u from Usuario u where u.email = :login and u.senha = :senha";
+		String consulta = "select u from Usuario u where u.email = :email and u.senha = :senha";
 		
 		TypedQuery<Usuario> query = entityManager.createQuery(consulta, Usuario.class);
-		query.setParameter("login", login);
+		query.setParameter("email", email);
 		query.setParameter("senha", senha);
 		
-		usuario = query.getSingleResult();
-		
-		return usuario;
+		return query.getSingleResult();
 	}
 
 	public List<Usuario> getRanking() {
@@ -64,5 +60,15 @@ public class UsuarioDAO {
 		TypedQuery<Usuario> query = entityManager.createQuery(consulta, Usuario.class);
 		
 		return query.getResultList();
+	}
+	
+	public Usuario getByEmail(String email) {
+		EntityManager entityManager = JpaUtil.getEntityManager();
+		String consulta = "select u from Usuario u where u.email = :email";
+		
+		TypedQuery<Usuario> query = entityManager.createQuery(consulta, Usuario.class);
+		query.setParameter("email", email);
+		
+		return query.getSingleResult();
 	}
 }

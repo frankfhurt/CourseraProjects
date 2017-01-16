@@ -16,10 +16,10 @@ public class Usuario {
 
 	private String nome;
 	private String senha;
-	
+
 	@OneToMany
 	private List<Livro> livros;
-	
+
 	private int pontos;
 
 	public String getEmail() {
@@ -53,4 +53,13 @@ public class Usuario {
 	public void setPontos(int pontos) {
 		this.pontos = pontos;
 	}
+
+	public List<Livro> getLivros() {
+		return livros;
+	}
+
+	public void adicionarLivro(Livro livro) {
+		this.livros.add(livro);
+	}
+
 }

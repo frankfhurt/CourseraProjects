@@ -6,6 +6,7 @@ import java.util.Optional;
 import br.com.coursera.dao.UsuarioDAO;
 import br.com.coursera.exception.ErroAoInserirUsuarioException;
 import br.com.coursera.exception.ErroDeAutenticacaoException;
+import br.com.coursera.model.Livro;
 import br.com.coursera.model.Usuario;
 
 public class UsuarioService {
@@ -21,6 +22,12 @@ public class UsuarioService {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	
+	public boolean verificarLeitura(String email, Livro livro) {
+		Usuario usuario = usuarioDao.getByEmail(email);
+		
+		return usuario.getLivros().contains(livro);
 	}
 	
 	public Usuario efetuarLogin(String login, String senha) throws ErroDeAutenticacaoException {

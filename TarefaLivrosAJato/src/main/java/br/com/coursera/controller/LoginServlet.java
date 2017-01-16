@@ -17,7 +17,7 @@ import br.com.coursera.service.UsuarioService;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	UsuarioService service;
+	private UsuarioService service = new UsuarioService();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,7 +28,6 @@ public class LoginServlet extends HttpServlet {
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		
-		service = new UsuarioService();
 		
 		try {
 			Usuario usuarioAutenticado = service.efetuarLogin(login, senha);

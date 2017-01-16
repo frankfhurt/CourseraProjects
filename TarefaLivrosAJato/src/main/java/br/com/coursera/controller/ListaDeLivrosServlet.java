@@ -19,11 +19,11 @@ import br.com.coursera.service.LivroService;
 @WebServlet("/listaDeLivros")
 public class ListaDeLivrosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private LivroService service = new LivroService();
+	private Usuario usuarioAutenticado;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		validaUsuarioAutenticado(request, response);
-		
-		LivroService service = new LivroService();
 		
 		List<Livro> livros = service.listarLivros();
 		request.setAttribute("livros", livros);
@@ -34,7 +34,7 @@ public class ListaDeLivrosServlet extends HttpServlet {
 	private void validaUsuarioAutenticado(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			Usuario usuarioAutenticado = (Usuario) getServletContext().getAttribute("usuarioAutenticado");
+			usuarioAutenticado = (Usuario) getServletContext().getAttribute("usuarioAutenticado");
 			if (usuarioAutenticado == null)
 				throw new Exception();
 		} catch (Exception e) {
