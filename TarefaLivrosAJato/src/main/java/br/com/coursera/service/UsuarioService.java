@@ -1,5 +1,6 @@
 package br.com.coursera.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import br.com.coursera.dao.UsuarioDAO;
@@ -23,7 +24,11 @@ public class UsuarioService {
 	}
 	
 	public Usuario efetuarLogin(String login, String senha) throws ErroDeAutenticacaoException {
-		Optional<Usuario> usuario = Optional.ofNullable(usuarioDao.recuperar(login, senha));
+		Optional<Usuario> usuario = Optional.ofNullable(usuarioDao.autenticar(login, senha));
 		return usuario.orElseThrow(() -> new ErroDeAutenticacaoException("Erro ao autenticar Usuario"));
+	}
+	
+	public List<Usuario> getRanking() {
+		return usuarioDao.getRanking();
 	}
 }

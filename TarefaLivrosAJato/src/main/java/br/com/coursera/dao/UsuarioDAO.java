@@ -1,5 +1,7 @@
 package br.com.coursera.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
@@ -40,11 +42,11 @@ public class UsuarioDAO {
 		}	
 	}
 	
-	public Usuario recuperar(String login, String senha) {
+	public Usuario autenticar(String login, String senha) {
 		EntityManager entityManager = JpaUtil.getEntityManager();
 		Usuario usuario;
 		
-		String consulta = "select u from Usuario u where u.login = :login and u.senha = :senha";
+		String consulta = "select u from Usuario u where u.email = :login and u.senha = :senha";
 		
 		TypedQuery<Usuario> query = entityManager.createQuery(consulta, Usuario.class);
 		query.setParameter("login", login);
@@ -53,5 +55,14 @@ public class UsuarioDAO {
 		usuario = query.getSingleResult();
 		
 		return usuario;
+	}
+
+	public List<Usuario> getRanking() {
+		EntityManager entityManager = JpaUtil.getEntityManager();
+		String consulta = "select u from Usuario u order by u.pontos desc";
+		
+		TypedQuery<Usuario> query = entityManager.createQuery(consulta, Usuario.class);
+		
+		return query.getResultList();
 	}
 }

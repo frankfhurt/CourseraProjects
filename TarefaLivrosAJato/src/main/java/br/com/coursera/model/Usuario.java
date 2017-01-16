@@ -1,11 +1,14 @@
 package br.com.coursera.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "usuario", schema="public")
+@Table(name = "usuario")
 public class Usuario {
 
 	@Id
@@ -13,6 +16,10 @@ public class Usuario {
 
 	private String nome;
 	private String senha;
+	
+	@OneToMany
+	private List<Livro> livros;
+	
 	private int pontos;
 
 	public String getEmail() {
