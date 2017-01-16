@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute("nome", nomeUsuario);
 			request.getRequestDispatcher("listaDeLivros").forward(request, response);
 		} catch (Exception e) {
-			request.setAttribute("erroLogin", e.getMessage());
+			request.setAttribute("erroLogin", "Erro ao autenticar Usuario");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 	}

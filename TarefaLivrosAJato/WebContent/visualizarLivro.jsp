@@ -138,8 +138,9 @@ body {
 			</tr>
 		</table>
 		<form method="post" action="visualizarLivro">
-			<button>${buttonText}</button>
+			<button ${disable}>${buttonText}</button>
 		</form>
+		<a href="listaDeLivros">Voltar</a>
 	</div>
 
 </body>

@@ -35,6 +35,10 @@ public class UsuarioService {
 		return usuario.orElseThrow(() -> new ErroDeAutenticacaoException("Erro ao autenticar Usuario"));
 	}
 	
+	public Usuario update(Usuario u) {
+		return usuarioDao.update(u);
+	}
+	
 	public List<Usuario> getRanking() {
 		return usuarioDao.getRanking();
 	}
