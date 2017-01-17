@@ -32,8 +32,7 @@ public class ListaDeLivrosServlet extends HttpServlet {
 		request.getRequestDispatcher("listaDeLivros.jsp").forward(request, response);
 	}
 
-	private void validaUsuarioAutenticado(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	private void validaUsuarioAutenticado(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			usuarioAutenticado = (Usuario) getServletContext().getAttribute("usuarioAutenticado");
 			if (usuarioAutenticado == null)
