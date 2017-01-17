@@ -26,7 +26,10 @@ public class LivroServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		validaUsuarioAutenticado(request, response);
 		
-		request.getSession().setAttribute("id", request.getParameter("id"));
+		String parameterId = request.getParameter("id");
+		
+		if (parameterId != null)
+			request.getSession().setAttribute("id", parameterId);
 
 		Long id = Long.valueOf((String) request.getSession().getAttribute("id"));
 		

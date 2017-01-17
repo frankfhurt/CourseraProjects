@@ -50,8 +50,8 @@ public class Usuario {
 		return pontos;
 	}
 
-	public void setPontos(int pontos) {
-		this.pontos = pontos;
+	private void adicionarPontuacao(int pontos) {
+		this.pontos += pontos;
 	}
 
 	public List<Livro> getLivros() {
@@ -60,6 +60,12 @@ public class Usuario {
 
 	public void adicionarLivro(Livro livro) {
 		this.livros.add(livro);
+		adicionarPontuacao(1);
+		if (livro.getQtdPaginas() >= 350)
+			adicionarPontuacao(4);
+		else if (livro.getQtdPaginas() >= 124)
+			adicionarPontuacao(2);
+		else if (livro.getQtdPaginas() >= 72)
+			adicionarPontuacao(1);
 	}
-
 }
