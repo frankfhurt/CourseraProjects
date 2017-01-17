@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Esse eu já li!</title>
+<title>Coursera - Esse eu já li!</title>
 </head>
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);

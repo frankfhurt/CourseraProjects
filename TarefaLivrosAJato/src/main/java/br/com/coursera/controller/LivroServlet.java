@@ -24,6 +24,8 @@ public class LivroServlet extends HttpServlet {
 	private Usuario usuarioAutenticado;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
 		validaUsuarioAutenticado(request, response);
 		
 		String parameterId = request.getParameter("id");
@@ -39,17 +41,17 @@ public class LivroServlet extends HttpServlet {
 		
 		boolean jaLido = usuarioService.verificarLeitura(usuarioAutenticado.getEmail(), livro);
 		String textButton;
-		String disabled = "";
+		String btnStatus = "";
 		if (jaLido) {
 			textButton = "Livro já Lido";
-			disabled = "disabled=\"disabled\"";
+			btnStatus = "disabled";
 		} else
 			textButton = "Marcar Como Lido";
 		
 		request.setAttribute("livro", livro);
 		request.getServletContext().setAttribute("livro", livro);
 		request.setAttribute("buttonText", textButton);
-		request.setAttribute("disabled", disabled);
+		request.setAttribute("btnStatus", btnStatus);
 		
 		request.getRequestDispatcher("visualizarLivro.jsp").forward(request, response);
 	}
@@ -64,12 +66,11 @@ public class LivroServlet extends HttpServlet {
 		usuarioAutenticado = usuarioService.update(usuarioAutenticado);
 		getServletContext().setAttribute("usuarioAutenticado", usuarioAutenticado);
 		
-		request.getSession().setAttribute("id", livro.getId());
-		request.setAttribute("buttonText", "Livro já Lido");
-		request.setAttribute("disabled", "disabled=\"disabled\"");
+		request.setAttribute("livro", livro);
+		request.setAttribute("buttonText", "Livro já lido");
+		request.setAttribute("btnStatus", "disabled");
 		
-		doGet(request, response);
-//		request.getRequestDispatcher("visualizarLivro?id=" + livro.getId()).forward(request, response);
+		request.getRequestDispatcher("visualizarLivro.jsp").forward(request, response);
 	}
 	
 	private void validaUsuarioAutenticado(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

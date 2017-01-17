@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 			Usuario usuarioAutenticado = service.efetuarLogin(login, senha);
 			getServletContext().setAttribute("usuarioAutenticado", usuarioAutenticado);
 			String nomeUsuario = usuarioAutenticado.getNome();
-			request.setAttribute("nome", nomeUsuario);
+			request.setAttribute("nomeUsuario", nomeUsuario);
 			request.getRequestDispatcher("listaDeLivros").forward(request, response);
 		} catch (Exception e) {
 			request.setAttribute("erroLogin", "Erro ao autenticar Usuario");

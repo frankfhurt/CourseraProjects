@@ -2,6 +2,7 @@ package br.com.coursera.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -19,6 +20,9 @@ public class Usuario {
 
 	@OneToMany
 	private List<Livro> livros;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Trofel> trofeus;
 
 	private int pontos;
 
@@ -58,14 +62,33 @@ public class Usuario {
 		return livros;
 	}
 
+	public List<Trofel> getTrofeus() {
+		return trofeus;
+	}
+
 	public void adicionarLivro(Livro livro) {
 		this.livros.add(livro);
+
 		adicionarPontuacao(1);
+
 		if (livro.getQtdPaginas() >= 350)
 			adicionarPontuacao(4);
 		else if (livro.getQtdPaginas() >= 124)
 			adicionarPontuacao(2);
 		else if (livro.getQtdPaginas() >= 72)
 			adicionarPontuacao(1);
+
+		long count = livros.stream().filter(l -> l.getEstilo().equals(livro.getEstilo())).count();
+
+		if (count == 5) {
+			Trofel trofel = new Trofel(livro.getEstilo());
+
+			if (trofeus.stream().noneMatch(t -> t.equals(trofel)))
+				adicionaTrofel(new Trofel(livro.getEstilo()));
+		}
+	}
+
+	private void adicionaTrofel(Trofel trofel) {
+		this.trofeus.add(trofel);
 	}
 }

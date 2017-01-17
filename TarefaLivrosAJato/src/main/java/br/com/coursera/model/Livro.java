@@ -1,6 +1,8 @@
 package br.com.coursera.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,6 +17,9 @@ public class Livro {
 
 	private String titulo;
 	private int qtdPaginas;
+	
+	@Enumerated(EnumType.STRING)
+	private LivroEstilos estilo;
 
 	public Long getId() {
 		return id;
@@ -34,6 +39,14 @@ public class Livro {
 
 	public void setQtdPaginas(int qtdPaginas) {
 		this.qtdPaginas = qtdPaginas;
+	}
+
+	public LivroEstilos getEstilo() {
+		return estilo;
+	}
+
+	public void setEstilo(LivroEstilos estilo) {
+		this.estilo = estilo;
 	}
 
 	@Override

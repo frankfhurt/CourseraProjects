@@ -5,14 +5,14 @@
 <title>Coursera - Esse eu já li!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-
 <style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 5px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -34,55 +34,68 @@
     color: white;
 }
 
-.button3 {
-	padding: 3px 16px;
+.button2 {
     background-color: white; 
     color: black; 
-    border: 2px solid #f44336;
+    border: 2px solid #008CBA;
 }
 
-.button3:hover {
-    background-color: #f44336;
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+table {
+    border-collapse: collapse;
+    width: 20%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
     color: white;
 }
 
 </style>
-
 <body>
 	<div class="w3-container">
-
-			<form method="post" action="logOut" style="float: right;">
-				<p>Olá ${nomeUsuario}</p>
-				<button class="button button3" >sair</button>
-			</form>
-
-			<form method="get" action="ranking">
-				<button class="button button1">Vizualizar Ranking de Usuários</button>
-			</form>
-
-		<div class="w3-container">
-			<h2>Lista de Livros</h2>
-	
-			
-			<table class="w3-table-all">
-				<thead>
-					<tr class="w3-green">
-						<th>Título do Livro</th>
-						<th>Estilo</th>
-						<th>Quantidade de Páginas</th>
-					</tr>
-				</thead>
-				<c:forEach var="livro" items="${livros}">
-					<tr class="w3-hover-gray" >
-						<td id="titulo">
-							<a href="visualizarLivro?id=${livro.id}">${livro.titulo}</a>
-						</td>
-						<td id="paginas">${livro.estilo.estilo}</td>
-						<td id="paginas">${livro.qtdPaginas}</td>
-					</tr>
-				</c:forEach>
-			</table>
-		</div>
+		<form method="get" action="ranking">
+			<button class="button button2">Voltar</button>
+		</form>
+		<h2>Pontuação e Troféus do Usuario ${usuario.nome}</h2>
+		
+		<p>Pontos: ${usuario.pontos}</p>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>Troféus</th>
+				</tr>
+			</thead>
+			<c:forEach var="trofel" items="${trofeus}">
+				<tr>
+					<td>Leitor de ${trofel.livroEstilo.estilo}</td>
+				</tr>
+			</c:forEach>
+		</table>
 	</div>
 </body>
 </html>

@@ -27,6 +27,7 @@ public class ListaDeLivrosServlet extends HttpServlet {
 		
 		List<Livro> livros = service.listarLivros();
 		request.setAttribute("livros", livros);
+		request.setAttribute("nomeUsuario", usuarioAutenticado.getNome());
 		
 		request.getRequestDispatcher("listaDeLivros.jsp").forward(request, response);
 	}

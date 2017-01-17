@@ -42,4 +42,8 @@ public class UsuarioService {
 	public List<Usuario> getRanking() {
 		return usuarioDao.getRanking();
 	}
+	
+	public Usuario buscarPorEmail(String email) {
+		return usuarioDao.getByEmail(email);
+	}
 }
