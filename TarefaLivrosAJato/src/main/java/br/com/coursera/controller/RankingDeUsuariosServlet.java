@@ -16,7 +16,7 @@ import br.com.coursera.service.UsuarioService;
  * Servlet implementation class RankingDeUsuarios
  */
 @WebServlet("/ranking")
-public class RankingDeUsuarios extends HttpServlet {
+public class RankingDeUsuariosServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	

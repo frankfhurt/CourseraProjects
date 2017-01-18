@@ -19,7 +19,7 @@ import br.com.coursera.service.UsuarioService;
 @WebServlet("/visualizarLivro")
 public class LivroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private LivroService livroService = new LivroService();
+	private LivroService service = new LivroService();
 	private UsuarioService usuarioService = new UsuarioService();
 	private Usuario usuarioAutenticado;
 
@@ -35,7 +35,7 @@ public class LivroServlet extends HttpServlet {
 
 		Long id = Long.valueOf((String) request.getSession().getAttribute("id"));
 		
-		Livro livro = livroService.buscarPorId(id);
+		Livro livro = service.buscarPorId(id);
 		request.setAttribute("livro", livro);
 		request.getSession().setAttribute("livro", livro);
 		

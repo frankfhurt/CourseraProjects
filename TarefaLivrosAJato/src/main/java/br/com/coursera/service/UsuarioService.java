@@ -2,6 +2,7 @@ package br.com.coursera.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import br.com.coursera.dao.UsuarioDAO;
 import br.com.coursera.exception.ErroAoInserirUsuarioException;
@@ -40,7 +41,11 @@ public class UsuarioService {
 	}
 	
 	public List<Usuario> getRanking() {
-		return usuarioDao.getRanking();
+		List<Usuario> usuarios = usuarioDao.getRanking();
+		
+		return usuarios.stream().
+				filter(u -> u.getPontos() > 0).
+				collect(Collectors.toList());
 	}
 	
 	public Usuario buscarPorEmail(String email) {

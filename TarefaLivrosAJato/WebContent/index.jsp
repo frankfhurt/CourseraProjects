@@ -133,7 +133,7 @@ body {
 				<p class="message">
 					Não é Cadastrado? <a href="/TarefaLivrosAJato/cadastro.jsp">Criar conta</a>
 				</p>
-				<p class="message">
+				<p class="message" style="color: red">
 					${erroLogin}
 				</p>
 			</form>
