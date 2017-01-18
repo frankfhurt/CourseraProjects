@@ -1,5 +1,3 @@
-﻿INSERT INTO livro(id, estilo, qtdpaginas, titulo) VALUES (?, ?, ?, ?);
-
 INSERT INTO livro(id, estilo, qtdpaginas, titulo) VALUES (1, 'AVENTURA', 75, 'João e o Pé de Feijão');
 INSERT INTO livro(id, estilo, qtdpaginas, titulo) VALUES (2, 'FICCAO_CIENTIFICA', 950, 'Biblia Sagrada');
 INSERT INTO livro(id, estilo, qtdpaginas, titulo) VALUES (3, 'AVENTURA', 750, 'O Senhor Dos Anéis');

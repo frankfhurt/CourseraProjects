@@ -17,7 +17,7 @@ public class Livro {
 
 	private String titulo;
 	private int qtdPaginas;
-	
+
 	@Enumerated(EnumType.STRING)
 	private LivroEstilos estilo;
 
@@ -54,8 +54,6 @@ public class Livro {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + qtdPaginas;
-		result = prime * result + ((titulo == null) ? 0 : titulo.hashCode());
 		return result;
 	}
 
@@ -72,13 +70,6 @@ public class Livro {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
-			return false;
-		if (qtdPaginas != other.qtdPaginas)
-			return false;
-		if (titulo == null) {
-			if (other.titulo != null)
-				return false;
-		} else if (!titulo.equals(other.titulo))
 			return false;
 		return true;
 	}
