@@ -77,13 +77,10 @@ public class Usuario {
 		this.livros.add(livro);
 
 		adicionarPontuacao(1);
-
-		if (livro.getQtdPaginas() >= 350)
-			adicionarPontuacao(4);
-		else if (livro.getQtdPaginas() >= 124)
-			adicionarPontuacao(2);
-		else if (livro.getQtdPaginas() >= 72)
-			adicionarPontuacao(1);
+		
+		int pontuacaoAdicional = livro.getQtdPaginas() / 100;
+		
+		adicionarPontuacao(pontuacaoAdicional);
 
 		long count = livros.stream().filter(l -> l.getEstilo().equals(livro.getEstilo())).count();
 
