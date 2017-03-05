@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Cloning the fucking nodes!</title>
+</head>
+
+<script type="text/javascript">
+
+function cloneThisSht() {
+	// var the_node = document.getElementsByTagName("ul")[0].lastChild;
+	var the_node = document.getElementById("myList").lastChild;
+	var the_clone = the_node.cloneNode(true);
+	document.getElementById("myList").appendChild(the_clone);
+}
+
+</script>
+
+<body>
+
+	<ul id="myList">
+		<li>Good Morning</li>
+		<li>Hallo</li>
+	</ul>
+
+	<form>
+
+		<input type="button" value="Click me To Clone" onClick="cloneThisSht()">
+
+	</form>
+	<button onclick="cloneThisSht()">Clone it!</button>
+</body>
+</html>

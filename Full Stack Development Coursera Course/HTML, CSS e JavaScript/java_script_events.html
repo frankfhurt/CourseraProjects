@@ -1,0 +1,43 @@
+<html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<head>
+	<title></title>
+</head>
+<script>
+	function do_something() {
+		alert('Clicked');
+	}
+
+	var btn0 = document.getElementById('btn0');
+	if (btn0)
+		btn0.addEventListener("click", do_something);
+
+	var btn1 = document.getElementById("btn1");
+	btn1.addEventListener("click", function () {
+		btn0.removeEventListener("click", do_something);
+		console("removida essa porra");
+	});
+
+</script>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="well">
+				<button id="btn0" class="btn btn-default" onclick=" alert('Hello!') ">Click Me!</button>
+				<button id="btn1" class="btn btn-default">Remove Listner</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title></title>
+</head>
+<script type="text/javascript">
+function insert_new_line() {
+	
+	var newItem = document.createElement("hr");
+
+	var destParent = document.getElementsByTagName("body")[0];
+
+	destParent.insertBefore(newItem, destParent.firstChild);
+}
+
+function insert_new_text() {
+	quebra = document.createElement("br")
+	result = document.createTextNode(" The New Text Negão!");
+	document.getElementById("my_text").appendChild(quebra);
+	document.getElementById("my_text").appendChild(result);
+}
+
+function delete_h1() {
+	the_node = document.getElementsByTagName("h1")[3];
+	the_node.parentNode.removeChild(the_node);
+}
+
+function delete_all() {
+	var theNode = document.getElementsByTagName("body")[0];
+
+	while(theNode.firstChild)
+		theNode.removeChild(theNode.firstChild);
+}
+
+</script>
+<body>
+	<h1 id="my_text">Whatever</h1>
+	<h1 id="my_text1">Whatever 2</h1>
+	<h1 id="my_text2">Whatever 3</h1>
+	<h1 id="my_text3">Whatever 4</h1>
+
+	<form>
+		<input type="button" value="Insert New Line at the Top" onClick="insert_new_line()">
+		<input type="button" value="Append Text" onClick="insert_new_text()">
+		<input type="button" value="Delete 4º h1" onClick="delete_h1()">
+		<input type="button" value="Delete Everything" onClick="delete_all()">
+	</form>
+</body>
+</html>

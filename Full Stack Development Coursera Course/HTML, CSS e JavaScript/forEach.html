@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>For Each Example</title>
+</head>
+<script type="text/javascript">
+
+	var continentes = ["América do Sul", "América Central", "Europa", "África", "Ásia", "Oceania"];
+	var cont = 0;
+
+	for (var continente of continentes) {
+		var esteve = confirm("Você já esteve na " + continente + "?");
+
+		if (esteve) cont++;
+	}
+	
+	// for (var index in continentes) {
+	// 	var esteve = confirm("Você já esteve na " + continentes[index] + "?");
+
+	// 	if (esteve) cont++;
+	// }
+
+	alert("Você já esteve em " + cont + " Continetes!");
+</script>
+<body>
+
+</body>
+</html>

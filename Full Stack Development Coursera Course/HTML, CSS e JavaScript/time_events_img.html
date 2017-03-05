@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Timer Event</title>
+</head>
+<script type="text/javascript">
+
+var x_position = 0;
+
+function setTimer() {
+	the_image = document.getElementById("praia");
+	x_position++;
+	the_image.style.left = x_position;
+	the_timer = setTimeout(setTimer, 100);
+}
+
+function myInterval() {
+	the_image = document.getElementById("praia");
+	x_position++;
+	the_image.style.left = x_position;
+}
+
+</script>
+<body onLoad="setInterval(myInterval, 50)">
+	<img src="praia.jpg" id="praia" style="position:absolute; left:0">
+</body>
+</html>

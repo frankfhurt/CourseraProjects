@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title></title>
+</head>
+<script type="text/javascript">
+
+function change_color1() {
+	document.childNodes[0].childNodes[2].childNodes[1].style.color="red";
+}
+
+function change_color2() {
+	document.getElementsByTagName("h2")[0].style.color="green";
+}
+
+function change_color3() {
+	document.getElementById("cute_text1").style.color="blue";
+}
+
+
+</script>
+
+<body>
+
+	<h2 style="color:black" id="cute_text1">Click on a button to change my color 1</h2>
+	<h2 style="color:black" id="cute_text2">Click on a button to change my color 2</h2>
+	<h2 style="color:black" id="cute_text3">Click on a button to change my color 3</h2>
+
+	<form>
+		<input onclick="change_color1()" type="button" value="Change using method 1">
+		<input onclick="change_color2()" type="button" value="Change using method 2">
+		<input onclick="change_color3()" type="button" value="Change using method 3">
+	</form>
+
+</body>
+</html>
