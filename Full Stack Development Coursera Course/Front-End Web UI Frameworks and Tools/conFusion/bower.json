@@ -1,0 +1,26 @@
+{
+  "name": "conFusion",
+  "homepage": "https://github.com/frankfhurt/CourseraProjects",
+  "authors": [
+    "Franklyn <frankfhurt@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "keywords": [
+    "conFusion",
+    "Fusion",
+    "Restaurant"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
