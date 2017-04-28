@@ -1,3 +1,8 @@
+var argv = require('yargs')
+    .usage('Usage: node $0 --l=[num] --b=[num]')
+    .demand(['l', 'b'])
+    .argv;
+
 var rect = require('./rectangle-2');
 
 function solveRect(l, b) {
@@ -15,6 +20,4 @@ function solveRect(l, b) {
     });
 };
 
-solveRect(2, 5);
-solveRect(3, 5);
-solveRect(-3, 5);
+solveRect(argv.l, argv.b);
