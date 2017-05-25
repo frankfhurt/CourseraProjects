@@ -36,9 +36,13 @@ public class WordCounter {
 	public int count(String word) {
 		
 		if (word == null || word.isEmpty())
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Invalid!");
 
 		return wordsCounted.get(word);
+	}
+
+	public void setCounter(Map<String, Integer> myCounter) {
+		wordsCounted = myCounter;
 	}
 
 }

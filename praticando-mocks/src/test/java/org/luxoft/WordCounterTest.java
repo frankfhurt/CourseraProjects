@@ -3,12 +3,20 @@ package org.luxoft;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class WordCounterTest {
+	
+	@Rule
+	public ExpectedException expect = ExpectedException.none();
 
 	private WordCounter counter;
 
@@ -51,8 +59,12 @@ public class WordCounterTest {
 		counter.count(null);
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
+//	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void countEmpty() {
+		expect.expect(IllegalArgumentException.class);
+		expect.expectMessage("Invalid!");
+		
 		counter.count("");
 	}
 	
@@ -74,6 +86,18 @@ public class WordCounterTest {
 		counter.take("Olá");
 		
 		assertEquals(1, counter.count("Hello"));
+	}
+	
+	@Test
+	public void overFlowWordCounter() {
+		Map<String, Integer> myCounter = new ConcurrentHashMap<>();
+		
+		myCounter.put("Luxoft", Integer.MAX_VALUE);
+		
+		counter.setCounter(myCounter);
+		
+		counter.take("Luxoft");
+		
 	}
 
 }
